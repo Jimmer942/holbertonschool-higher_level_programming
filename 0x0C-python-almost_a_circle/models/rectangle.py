@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+""" Module class Rectangle """
+
 from models.base import Base
-""" Module class Base """
 
 
 class Rectangle(Base):
@@ -43,8 +44,8 @@ class Rectangle(Base):
         self.__height = value
 
     @property
-    """ x getter """
     def x(self):
+        """ x getter """
         return self.__x
 
     @x.setter
