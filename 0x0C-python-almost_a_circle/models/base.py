@@ -16,6 +16,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """ JSON string """
@@ -51,7 +52,6 @@ class Base:
             r.update(**dictionary)
         return ins
 
-
     @classmethod
     def load_from_file(cls):
         """ load from file"""
@@ -74,7 +74,7 @@ class Base:
             cw = csv.writer(cs)
             if cls.__name__ is "Rectangle":
                 for i in list_objs:
-                    cw.writerow([i.id, i.width, i.height,i.x, i.y])
+                    cw.writerow([i.id, i.width, i.height, i.x, i.y])
             elif cls.__name__ is "Square":
                 for j in list_objs:
                     cw.writerow([j.id, j.size, j.x, j.y])
