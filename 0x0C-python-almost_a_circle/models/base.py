@@ -87,7 +87,7 @@ class Base:
         try:
             with open(filename, 'r') as cf:
                 cr = csv.reader(cf)
-                for args in csv_reader:
+                for args in cr:
                     if cls.__name__ is "Rectangle":
                         dic = {"id": int(args[0]), "width": int(args[1]),
                                "height": int(args[2]), "x": int(args[3]),
