@@ -15,7 +15,7 @@ class Square(Rectangle):
         """ Print """
         s1 = "[Square] ({}) ".format(self.id)
         s2 = "{}/{} - ".format(self.x, self.y)
-        s3 = "{}/{}".format(self.width, self.height)
+        s3 = "{}".format(self.width)
         return s1+s2+s3
 
     @property
