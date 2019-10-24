@@ -100,3 +100,49 @@ class Base:
         except:
             pass
         return l
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ Turtle """
+        import turtle
+        from random import randint
+        lists = list_rectangles + list_squares
+        turtle.colormode(255)
+        turtle.bgcolor("white")
+        turtle.pensize(10)
+        t = turtle.Turtle()
+        t.shape("turtle")
+        t.color("#000000")
+        x = -355
+        y = -255
+        mh = 0
+        c = 0
+        c1 = 0
+        for i in lists:
+            c1 += 1
+            if c1 == 1:
+                for j in range(3):
+                    t.lt(360)
+                    t.rt(360)
+            t.pensize(0)
+            t.color((randint(1, 254), randint(1, 254), randint(1, 254)))
+            t.goto(x, y)
+            if i.height > mh:
+                mh = i.height
+            if x > 255:
+                c += 1
+                if c == 1:
+                    y += mh + 10
+                    x -= i.width + 10
+                if c == 2:
+                    x = -355
+            x += i.width + 10
+            t.pensize(10)
+            for r in range(2):
+                t.lt(90)
+                t.fd(i.height)
+                t.rt(90)
+                t.fd(i.width)
+                t.rt(180)
+            t.goto(x, y)
+        turtle.exitonclick()
