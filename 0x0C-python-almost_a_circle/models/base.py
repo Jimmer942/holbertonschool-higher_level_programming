@@ -49,8 +49,8 @@ class Base:
             r = cls(1, 1)
         elif cls.__name__ is "Square":
             r = cls(1)
-            r.update(**dictionary)
-        return ins
+        r.update(**dictionary)
+        return r
 
     @classmethod
     def load_from_file(cls):
