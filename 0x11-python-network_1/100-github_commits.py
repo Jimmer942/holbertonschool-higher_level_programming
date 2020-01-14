@@ -10,7 +10,7 @@ if __name__ == "__main__":
     url = url + owner + "/" + repo + "/commits"
     req = requests.get(url)
     jsondic = req.json()
-    count = 1
+    count = 0
     for i in jsondic:
         print("{}: {}".format(i['sha'], i['commit']['author']['name']))
         count += 1
