@@ -7,7 +7,7 @@ import sys
 
 
 if __name__ == "__main__":
-    url = 
+    url = sys.argv[1]
     req = requests.get(url)
     if req.status_code == requests.codes.ok:
         print(req.text)
