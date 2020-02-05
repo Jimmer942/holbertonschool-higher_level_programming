@@ -4,7 +4,7 @@ if (typeof process.argv[2] === 'undefined' || process.argv.length === 3) {
   console.log(0);
 } else {
   let max = process.argv[2];
-  let max2 = process.argv[2];
+  let max2 = 0;
   for (let i = 3; i < process.argv.length; i++) {
     if (process.argv[i] > max) { max = process.argv[i]; }
   }
