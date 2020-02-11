@@ -4,7 +4,9 @@ function isEmpty (obj) { return Object.keys(obj).length === 0; }
 const d = {};
 for (let i = 0; ; i++) {
   const l = [];
-  for (var key in dict) { if (dict[key] === i) { l.push(key); delete dict[key]; } }
+  Object.keys(dict).forEach(function (key) {
+    if (dict[key] === i) { l.push(key); delete dict[key]; }
+  });
   if (isEmpty(l) === false) { d[i] = l; }
   if (isEmpty(dict)) { break; }
 }
